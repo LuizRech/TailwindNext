@@ -11,6 +11,8 @@ export function ImagePreview() {
     if (files.length === 0) {
       return null
     }
+
+    return URL.createObjectURL(files[0])
   }, [files])
 
   if (previewURL === null) {
@@ -20,7 +22,6 @@ export function ImagePreview() {
       </div>
     )
   } else {
-    console.log(previewURL)
     return (
       <img
         src={previewURL}
